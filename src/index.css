@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html {
+  /* font-family: sans-serif; */
+  font-family: 'Inter', sans-serif;
+
+  background: #fff;
+  /* font-size: 10px; */
+    /* 10px / 16px=0.625=62.5% */
+    /* percentage of users browser font-size settting */
+  font-size: 62.5%;
+  /* font-size: 100%; */
+}
+
+body {
+  margin: 0;
+  font-family: "inter", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+}
+.dash_container{
+  display: flex;
+}
+
+@media (max-width:768px){
+  .dash_container{
+    display: block;
+  
+  }
+}
+
+.container1 {
+  /* 1140px */
+  max-width: 140rem;
+  padding: 2.2rem 2.2rem;
+  margin: 0rem auto;
+}
+main{
+  width: 100%;
+  /* padding: 20px; */
+}
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+/* .grid:last-child{
+  margin-bottom: 0;
+} */
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: rgb(68, 109, 137);
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  color: rgb(68, 109, 137);
+  margin-bottom: 2.6rem;
+}
+
+.heading-tertiary {
+  font-size: 1.8rem;
+  margin-bottom: 2.2rem;
+  line-height: 1.0;
+  text-decoration: none;
+}
+
+.sub-heading {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;   
+  margin-bottom: 1.4rem;
+  letter-spacing: 0.55px;
+}
+  

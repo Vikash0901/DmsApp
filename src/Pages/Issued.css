@@ -1,0 +1,14 @@
+.table thead , tbody{
+    font-size: 1.6rem;
+    /* text-decoration: none; */
+}
+.table td button{
+    font-size: 1.5rem;
+    color:rgb(48, 143, 181);    
+}
+.text-body{
+    text-decoration: none;
+}
+.card-container{
+    padding: 4rem 2rem;
+}

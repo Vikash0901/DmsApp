@@ -1,0 +1,65 @@
+form label {
+    font-size: 1.4rem;
+}
+
+form input {
+    font-size: 1.4rem;
+}
+
+form h5 {
+    font-size: 1.4rem;
+}
+
+.orm-check-input {
+    font-size: 1.4rem;
+}
+
+.form-control {
+    font-size: 1.4rem;
+}
+
+.btn {
+    font-size: 1.4rem;
+}
+
+.expenses-filter__control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.expenses-filter label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.expenses-filter select {
+    font: inherit;
+    padding: 0.5rem 3rem;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.searchWrapper {
+    padding: 0.8rem !important;
+}
+
+.error-text {
+    color: #b40e0e;
+}
+button:disabled,
+button:disabled:hover,
+button:disabled:active{
+  background-color: #ccc;
+  color:#292929;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+.option{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* padding: 0;   */
+}

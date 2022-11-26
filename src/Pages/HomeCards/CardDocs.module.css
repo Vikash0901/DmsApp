@@ -1,0 +1,41 @@
+.card_holder {
+    /* background-color: white; */
+    display: flex;
+    gap: 3rem;
+}
+
+.card_container {
+    padding: 1.2rem 3.2rem;
+    width: 32rem;
+    display: flex;
+    flex-direction:column;
+    gap: 1rem;
+    
+    border-radius: 0.6rem;
+    background-color: white;
+    /* box-shadow: 0px 0px 5px; */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+.card_container:hover{
+    transform: translateY(-0.5rem);
+}
+
+.card_data {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.aadhar_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* .aadhar_container span{
+    -webkit-text-security: disc; 
+} */
+
+.card_data img {
+    width: 8rem;
+    height: 8rem;
+}

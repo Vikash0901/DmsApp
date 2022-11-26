@@ -1,0 +1,20 @@
+/* .home {
+  width: 90%;
+  max-width: 40rem;
+  padding: 3rem;
+  margin: 2rem auto;
+  text-align: center;
+} */
+
+.heading_container{
+  display: flex;
+  justify-content: space-between;
+}
+.heading_container Link{
+  text-decoration: none;
+}
+.card_holder {
+  /* background-color: white; */
+  display: flex;
+  gap: 3rem;
+}
