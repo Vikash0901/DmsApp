@@ -1,17 +1,17 @@
 import React from 'react';
 import '../Issued.css';
-// import { FaDownload, FaTrash, FaEdit, FaEye, } from 'react-icons/fa';
+import { FaDownload, FaTrash, FaEdit, FaEye, } from 'react-icons/fa';
 import { Modal } from '../../components/Modal';
 
 
 export const Tbody = (props) => {
 
-    const tableAction = props.action.map((docIcon) => (
-            <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                {docIcon}
-                <Modal />
-            </button>
-    ))
+    // const tableAction = props.action.map((docIcon) => (
+    //         <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    //             {docIcon}
+    //             <Modal />
+    //         </button>
+    // ))
 
     return (
         <React.Fragment>
@@ -28,7 +28,25 @@ export const Tbody = (props) => {
                 <td>{props.size}</td>
                 <td>{props.createdOn}</td>
                 <td><span className="">{props.updatedOn}</span></td>
-                <td>{tableAction}</td>
+                {/* <td>{tableAction}</td> */}
+                <td>  
+                        <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <Modal/>
+                            <FaTrash/>
+                        </button>
+                        <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <FaEdit/>
+                            <Modal/>
+                        </button>
+                        <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <FaDownload/>
+                            <Modal/>
+                        </button>
+                        <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <FaEye/>
+                            <Modal/>
+                        </button>
+                    </td>
             </tr>
             {/* <tr>
                     <td>

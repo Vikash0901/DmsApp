@@ -29,7 +29,7 @@ export const Dashboard = () => {
   const enteredNameIsValid = enteredName.trim() !== '';
   const enteredMinIsValid = enteredMin.trim() >= 100;
   const enteredMaxIsValid = enteredMax.trim() <= 2000;
-  const selctedValueIsValid = selctedValue.length != 0;
+  const selctedValueIsValid = selctedValue.length !== 0;
 
   const selectedInputIsValid = !selctedValueIsValid && selectedValueTouched;
   const enteredInputIsValid = !enteredNameIsValid && enteredNameTouched;
@@ -130,7 +130,7 @@ export const Dashboard = () => {
               onBlur={nameBlurHandler}
 
               value={enteredName} type="text"
-              className='form-control' id="DocsName" aria-describedby="emailHelp" />
+              className='form-control' id="DocsName" aria-describedby="emailHelp" required />
             {enteredInputIsValid &&
               (<p className='error-text'>Not valid</p>
               )}

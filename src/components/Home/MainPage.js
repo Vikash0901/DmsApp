@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Route, Routes } from 'react-router-dom';
 import { Navigation } from '../MainHeader/Navigation';
 import { Sidebar } from '../Sidebar';
@@ -10,10 +10,16 @@ import { SearchDocs } from '../../Pages/SearchDocs';
 import { Drive } from '../../Pages/Drive';
 
 export const MainPage = (props) => {
+  const [isOpen, setIsOpen] = useState(true);
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <div>
-      <Sidebar isLoggedIn={props.isAuthenticated} onLogOut={props.onLogout}>
-        <Navigation isLoggedIn={props.isAuthenticated} onSignOut={props.onLogout} />
+      <Navigation isLoggedIn={props.isAuthenticated} onSignOut={props.onLogout} onToggle={toggle} isOpen={isOpen} />
+      <Sidebar
+        isLoggedIn={props.isAuthenticated}
+        onLogOut={props.onLogout}
+        isOpen={isOpen}>
         {/* <div style={{marginTop:'5rem'}}> */}
         <Routes>
           <Route path='/' element={<Home />} />

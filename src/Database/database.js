@@ -41,27 +41,29 @@ export const IssuedDocs = () => {
       // .then(result => console.log(JSON.parse(result).token))
       .then(result => setState((JSON.parse(result).token)))
       .catch(error => console.log('error', error))
-  }, [])
-  // console.log(state);
+  }, [requestOptions])
+  console.log(state);
 
   let myHeaders1 = new Headers();
-  myHeaders1.append("Authorization", `"Bearer" ${state}`);
-  // myHeaders1.append("Authorization", "Bearer" + state );
+  // myHeaders1.append("Authorization", `"Bearer" ${state}`);
+  myHeaders1.append("Authorization", "Bearer" + state );
 
   let requestOptions1 = {
     method: 'GET',
     headers: myHeaders1,
     redirect: 'follow'
   };
-  let transformedData;
 
   useEffect(() => {
     fetch("http://192.168.29.183:3800/api/v1/doc/show-all-docs/3/", requestOptions1)
+      // .then(response => response.text())
       .then(response => response.json())
+      // .then(result => console.log(result))
       .then(result1 => {
         console.log(result1);
         console.log("done");
-        transformedData = result1.doc.map((cardData1) => {
+        //  return false;
+        const transformedData = result1.doc.map((cardData1) => {
           return{
             id:cardData1._id,
             createdDate:cardData1.created_at,
@@ -71,19 +73,35 @@ export const IssuedDocs = () => {
             type:cardData1.document_id.contentType,
           }
         })
-        // console.log(transformedData)
         setCardData(transformedData);
       })
-      
       .catch(error => console.log('error', error));
-  
-    },[state])
-    console.log(cardData);
+      // console.log(cardData);
+  },[])
 
 
- 
+  const tableData = [
+    {
+      id: 1,
+      name: 'Aadhar Card',
+      docType: 'pdf',
+      docSize: '55kb',
+      docCreated: '07 Oct 2019',
+      docLastUpdated: '08 Oct 2022',
+      docAction: [<FaDownload />, <FaTrash />, <FaEdit />, <FaEye />]
+    },
+    {
+      id: 2,
+      name: 'Pan Card',
+      type: 'pdf',
+      size: '50kb',
+      createdDate: '15 Oct 2020',
+      uploadDate: '08 Oct 2022',
+      docAction: [<FaDownload />, <FaTrash />, <FaEdit />, <FaEye />]
+    }
+  ];
 
-  const tableBody = cardData.map((data) => (
+  const tableBody = tableData.map((data) => (
     <Tbody
       key={data.id}
       id={data.id}
@@ -115,3 +133,25 @@ export const IssuedDocs = () => {
     </div>
   )
 }
+
+
+const tableData = [
+  {
+    id: 1,
+    name: 'Aadhar Card',
+    docType: 'pdf',
+    docSize: '55kb',
+    docCreated: '07 Oct 2019',
+    docLastUpdated: '08 Oct 2022',
+    docAction: [<FaDownload />, <FaTrash />, <FaEdit />, <FaEye />]
+  },
+  {
+    id: 2,
+    name: 'Pan Card',
+    type: 'pdf',
+    size: '50kb',
+    createdDate: '15 Oct 2020',
+    uploadDate: '08 Oct 2022',
+    docAction: [<FaDownload />, <FaTrash />, <FaEdit />, <FaEye />]
+  }
+];

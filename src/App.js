@@ -15,9 +15,16 @@ function App() {
   },[]);
 
   const loginHandler = (email, password) => {
+    // console.log(email , password);
+
+    if(email !== 'vikashdagar1998@gmail.com' && password !== 'Vikash@123'){
+      console.log('wrong cred');
+      return;
+    }
+    
     // We should of course check email and password
     // But it's just a dummy/ demo anyways
-    localStorage.setItem('isLoggedIn','1')
+    localStorage.setItem('isLoggedIn','1');
     setIsLoggedIn(true);
   };
 
@@ -29,7 +36,7 @@ function App() {
   return (
     <React.Fragment>
         {!isLoggedIn && <Login isAuthenticated={isLoggedIn} onLogin={loginHandler} />}
-        {isLoggedIn && <MainPage isAuthenticated={isLoggedIn} onLogout={logoutHandler} />}
+        {isLoggedIn && <MainPage isAuthenticated={isLoggedIn} onLogout={logoutHandler} />}        
     </React.Fragment>
   );
 }
